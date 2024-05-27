@@ -21,7 +21,7 @@ public class ChatSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Button mapButton;
 
-    private bool isDialogue = false;
+    public bool isDialogue = false;
     private int cnt = 0;
 
     public void ShowDialogue()
@@ -34,7 +34,7 @@ public class ChatSystem : MonoBehaviour
 
     private void OnOff(bool flag)
     {
-        dialogueBox.gameObject.SetActive(flag);
+        dialogueBox.SetActive(flag);
         isDialogue = flag;
     }
 
@@ -64,7 +64,7 @@ public class ChatSystem : MonoBehaviour
 
    void Start()
     {
-        dialogueBox.gameObject.SetActive(false);
+        dialogueBox.SetActive(false);
         ShowDialogue();
     }
 }

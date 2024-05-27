@@ -1659,6 +1659,7 @@ MonoBehaviour:
   nameText: {fileID: 1719944437}
   dialogueText: {fileID: 1253120538}
   mapButton: {fileID: 1555077470}
+  isDialogue: 0
 --- !u!1 &905581745
 GameObject:
   m_ObjectHideFlags: 0
