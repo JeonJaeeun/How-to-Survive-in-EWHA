@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Dialogue
@@ -20,9 +21,12 @@ public class ChatSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Button mapButton;
+    [SerializeField] private string diaglogueKey;
 
     public bool isDialogue = false;
     private int cnt = 0;
+    private string MAIN = "1_Main";
+    private string ECC = "ECC";
 
     public void ShowDialogue()
     {
@@ -44,6 +48,7 @@ public class ChatSystem : MonoBehaviour
         if (cnt >= dialogues.Length)
         {
             OnOff(false);
+            SetChatManager();
             mapButton.gameObject.SetActive(true);
             return;
         }
@@ -52,6 +57,31 @@ public class ChatSystem : MonoBehaviour
         dialogueText.text = dialogues[cnt].sentences;
         image.sprite = dialogues[cnt].image;
         cnt++;
+    }
+
+    private void SetChatManager()
+    {
+        if (SceneManager.GetActiveScene().name == ECC)
+        {
+            ChatManager.manager.ecc = true;
+        }
+        else if (SceneManager.GetActiveScene().name == MAIN)
+        {
+            ChatManager.manager.main = true;
+        }
+    }
+
+    private bool CheckIsDialogueEnd()
+    {
+        if (SceneManager.GetActiveScene().name == ECC)
+        {
+            return ChatManager.manager.ecc;
+        }
+        else if (SceneManager.GetActiveScene().name == MAIN)
+        {
+            return ChatManager.manager.main;
+        }
+        return false;
     }
 
     private void Update()
@@ -64,7 +94,11 @@ public class ChatSystem : MonoBehaviour
 
    void Start()
     {
-        dialogueBox.SetActive(false);
+        if(CheckIsDialogueEnd())
+        {
+            dialogueBox.SetActive(false);
+            return;
+        }
         ShowDialogue();
     }
 }
