@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pbr_material
+  m_Name: pbr_material 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: a882c5e7102344759828d5f8c33b60f2, type: 2}
   m_ModifiedSerializedProperties: 2
@@ -27,11 +27,11 @@ Material:
     m_TexEnvs:
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 0.2, y: 0.2}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 9a50f38d2c090e44aa7418215ef8db22, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 0.2, y: 0.2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 01b805cb6299c094a817824795c0b479, type: 3}

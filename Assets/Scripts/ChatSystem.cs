@@ -86,7 +86,7 @@ public class ChatSystem : MonoBehaviour
 
     private void Update()
     {
-        if (isDialogue && Input.GetKeyDown(KeyCode.Space))
+        if (isDialogue && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
             NextDialogue();
         }
