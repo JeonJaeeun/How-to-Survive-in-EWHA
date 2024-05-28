@@ -32,4 +32,9 @@ public class ECCScene : MonoBehaviour
     {
         SceneManager.LoadScene("AR_ECC");
     }
+
+    public void SceneChange_ECC()
+    {
+        SceneManager.LoadScene("ECC");
+    }
 }
