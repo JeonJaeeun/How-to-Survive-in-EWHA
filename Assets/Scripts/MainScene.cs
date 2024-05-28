@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Button mapButton;
+    [SerializeField] private Button locationButton;
+    [SerializeField] private GameObject mapPanel;
+    [SerializeField] private Animator mapAnimator;
+    private bool isClicked = false;
+
+    public void ButtonOnClick()
     {
-        
+        mapAnimator.SetBool("stop", true);
+
+        if (!isClicked)
+        {
+            isClicked = true;
+            mapPanel.SetActive(true);
+        }
+        else
+        {
+            isClicked = false;
+            mapPanel.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadEccScene()
     {
-        
+        SceneManager.LoadScene("ECC");
     }
 }

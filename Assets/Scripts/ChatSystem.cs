@@ -15,12 +15,13 @@ public class Dialogue
 public class ChatSystem : MonoBehaviour
 {
     [SerializeField] private Dialogue[] dialogues;
+    [SerializeField] private GameObject dialogueBox;
     [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Button mapButton;
 
-    private bool isDialogue = false;
+    public bool isDialogue = false;
     private int cnt = 0;
 
     public void ShowDialogue()
@@ -33,12 +34,13 @@ public class ChatSystem : MonoBehaviour
 
     private void OnOff(bool flag)
     {
-        this.gameObject.SetActive(flag);
+        dialogueBox.SetActive(flag);
         isDialogue = flag;
     }
 
     private void NextDialogue()
     {
+        Debug.Log(dialogues.Length);
         if (cnt >= dialogues.Length)
         {
             OnOff(false);
@@ -62,7 +64,7 @@ public class ChatSystem : MonoBehaviour
 
    void Start()
     {
+        dialogueBox.SetActive(false);
         ShowDialogue();
-        this.gameObject.SetActive(true);
     }
 }
