@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+public class LoadAR : MonoBehaviour
 {
 
-  public void SceneChange()
+    public void SceneChange()
     {
-        SceneManager.LoadScene("inside_ECC");
+        SceneManager.LoadScene("AR_ECC");
     }
 }
