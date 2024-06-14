@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+public class StartScene : MonoBehaviour
 {
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("inside_ECC");
+        SceneManager.LoadScene("1_Main");
     }
 }
+
