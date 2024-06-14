@@ -10,6 +10,8 @@ class ChatManager : MonoBehaviour
         if(manager == null)
         {
             manager = this;
+            ecc = false;
+            main = false;
             DontDestroyOnLoad(this.gameObject);
         }
         else if(manager != this)

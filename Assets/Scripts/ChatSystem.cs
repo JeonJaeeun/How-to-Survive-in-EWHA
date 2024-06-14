@@ -11,15 +11,14 @@ public class Dialogue
     public string name;
     [TextArea] public string sentences;
     public Sprite image;
+    public bool isNPC;
 }
 
 public class ChatSystem : MonoBehaviour
 {
     [SerializeField] private Dialogue[] dialogues;
-    [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private Image image;
-    [SerializeField] private TextMeshProUGUI nameText;
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject npcDialogue;
+    [SerializeField] private GameObject userDialogue;
     [SerializeField] private Button mapButton;
     [SerializeField] private string diaglogueKey;
 
@@ -38,13 +37,14 @@ public class ChatSystem : MonoBehaviour
 
     private void OnOff(bool flag)
     {
-        dialogueBox.SetActive(flag);
+        npcDialogue.SetActive(false);
+        userDialogue.SetActive(false);
+
         isDialogue = flag;
     }
 
     private void NextDialogue()
     {
-        Debug.Log(dialogues.Length);
         if (cnt >= dialogues.Length)
         {
             OnOff(false);
@@ -53,9 +53,54 @@ public class ChatSystem : MonoBehaviour
             return;
         }
 
-        nameText.text = dialogues[cnt].name;
-        dialogueText.text = dialogues[cnt].sentences;
-        image.sprite = dialogues[cnt].image;
+        Dialogue currentDialogue = dialogues[cnt];
+        Transform[] dialogueChildren;
+        if (currentDialogue.isNPC)
+        {
+            // NPC 대화일 경우
+            npcDialogue.SetActive(true);
+            userDialogue.SetActive(false);
+
+            // npcDialogue 오브젝트의 자식 오브젝트들을 가져옴
+            dialogueChildren = npcDialogue.GetComponentsInChildren<Transform>(true);
+        }
+        else
+        {
+            // 사용자 대화일 경우
+            npcDialogue.SetActive(false);
+            userDialogue.SetActive(true);
+
+            // userDialogue 오브젝트의 자식 오브젝트들을 가져옴
+            dialogueChildren = userDialogue.GetComponentsInChildren<Transform>(true);
+        }
+
+        // 가져온 자식 오브젝트들 중에서 Name, TextBox, Character를 찾아서 값을 대응시킴
+        foreach (Transform child in dialogueChildren)
+        {
+            if (child.name == "NameTxt")
+            {
+                if (child.TryGetComponent<TextMeshProUGUI>(out var nameText))
+                {
+                    nameText.text = currentDialogue.name;
+                }
+            }
+            else if (child.name == "TextBoxTxt")
+            {
+                if (child.TryGetComponent<TextMeshProUGUI>(out var dialogueTextBox))
+                {
+                    dialogueTextBox.text = currentDialogue.sentences;
+                }
+            }
+            else if (child.name == "Character")
+            {
+                Image characterImage = child.GetComponent<Image>();
+                if (characterImage != null && currentDialogue.image != null)
+                {
+                    characterImage.sprite = currentDialogue.image;
+                }
+            }
+        }
+
         cnt++;
     }
 
@@ -96,7 +141,8 @@ public class ChatSystem : MonoBehaviour
     {
         if(CheckIsDialogueEnd())
         {
-            dialogueBox.SetActive(false);
+            userDialogue.SetActive(false);
+            npcDialogue.SetActive(false);
             return;
         }
         ShowDialogue();
