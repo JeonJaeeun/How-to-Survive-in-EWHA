@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadAR : MonoBehaviour
-{
 
+public class Goback_Ecc : MonoBehaviour
+{
+    // Start is called before the first frame update
     public void SceneChange()
     {
-        SceneManager.LoadScene("AR_Hint_ECC1");
+        SceneManager.LoadScene("ECC");
     }
 }
