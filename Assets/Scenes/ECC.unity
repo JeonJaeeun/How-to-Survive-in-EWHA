@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapAnimator: {fileID: 476063941}
   modal: {fileID: 1205601185}
-  chatSystem: {fileID: 0}
+  chatSystem: {fileID: 63345841}
 --- !u!1001 &132897115
 PrefabInstance:
   m_ObjectHideFlags: 0
