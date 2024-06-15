@@ -30,7 +30,7 @@ public class ECCScene : MonoBehaviour
 
     public void SceneChange_AR()
     {
-        SceneManager.LoadScene("AR_ECC");
+        SceneManager.LoadScene("AR_Hint_ECC1");
     }
 
     public void SceneChange_ECC()
