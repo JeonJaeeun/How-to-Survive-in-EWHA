@@ -16,7 +16,7 @@ public class Dialogue
 
 public class ChatSystem : MonoBehaviour
 {
-    [SerializeField] private Dialogue[] dialogues;
+    [SerializeField] public Dialogue[] dialogues;
     [SerializeField] private GameObject npcDialogue;
     [SerializeField] private GameObject userDialogue;
     [SerializeField] private Button mapButton;
@@ -146,5 +146,14 @@ public class ChatSystem : MonoBehaviour
             return;
         }
         ShowDialogue();
+    }
+
+    public bool CheckIsNpc()
+    {
+        if(cnt < dialogues.Length)
+        {
+            return dialogues[cnt].isNPC;
+        }
+        return true;
     }
 }

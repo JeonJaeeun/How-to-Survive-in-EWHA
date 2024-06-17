@@ -41,21 +41,4 @@ public class StarbucksScene : MonoBehaviour
     {
         stamp.color = new Color(255f, 255f, 255f, 1f); // 변경할 색상을 설정합니다.
     }
-
-    public void SceneChange()
-    {
-        Debug.Log("버튼 클릭");
-        SceneManager.LoadScene(InsideSceneManager.manager.ECC_STAIRS);
-    }
-
-    public void ClickMapButton()
-    {
-        // 맵 모달이 활성화 되어 있을 경우 비활성화
-        if (mapModal.activeSelf)
-        {
-            mapModal.SetActive(false);
-            return;
-        }
-        mapModal.SetActive(true);
-    }
 }

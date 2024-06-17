@@ -8,18 +8,16 @@ public class ECCScene : MonoBehaviour
 {
   [SerializeField] private Animator mapAnimator;
   [SerializeField] private GameObject modal;
+  [SerializeField] private GameObject mapButton;
   [SerializeField] private ChatSystem chatSystem;
-
-  void Start()
-  {
-      mapAnimator.SetBool("stop", true);
-  }
 
   void Update()
   {
       if (!chatSystem.isDialogue)
       {
-          modal.SetActive(true);
+        modal.SetActive(true);
+        mapButton.SetActive(true);
+        mapAnimator.SetBool("stop", true);
       }
   }
 
