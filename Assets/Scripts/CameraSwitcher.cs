@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraSwitcher : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class CameraSwitcher : MonoBehaviour
 
     void Start()
     {
+        if(InsideSceneManager.manager.CheckIsNavigationEnd())
+        {
+            camera1.gameObject.SetActive(false);
+            camera2.gameObject.SetActive(true);
+            return;
+        }
         camera1.gameObject.SetActive(true);
         camera2.gameObject.SetActive(false);
         StartCoroutine(SwitchCameraAfterDelay());

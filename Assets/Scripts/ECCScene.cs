@@ -25,7 +25,7 @@ public class ECCScene : MonoBehaviour
 
   public void SceneChange()
   {
-      SceneManager.LoadScene("inside_ECC");
+      SceneManager.LoadScene("inside_ECC_B4");
   }
 
     public void SceneChange_AR()

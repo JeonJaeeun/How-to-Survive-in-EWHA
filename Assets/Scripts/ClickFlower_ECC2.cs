@@ -5,11 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class ClickFlower_ECC2 : MonoBehaviour
 {
-
- public void SceneChange()
+    public void SceneChange()
+    {
+        if(SceneManager.GetActiveScene().name == "AR_ECC1")
         {
-            SceneManager.LoadScene("1_Main"); // "Main" æ¿¿∏∑Œ ¿¸»Ø
-
+            SceneManager.LoadScene("inside_ECC_B4");
         }
+        else if(SceneManager.GetActiveScene().name == "AR_ECC2")
+        {
+            SceneManager.LoadScene("inside_ECC");
+        }
+        else if (SceneManager.GetActiveScene().name == "AR_ENG")
+        {
+            SceneManager.LoadScene("inside_GONG_SIN _B1");
+        }
+
+        else if (SceneManager.GetActiveScene().name == "AR_Library")
+        {
+            SceneManager.LoadScene("inside_Library_1 1");
+        }
+    }
 
 }

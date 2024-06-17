@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -497,6 +497,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53648525}
   m_CullTransparentMesh: 1
+--- !u!1 &101574780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101574782}
+  - component: {fileID: 101574781}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &101574781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101574780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da44e342358fcc24abb6cf5815afd34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &101574782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101574780}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1275, y: 427.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &134700478
 Mesh:
   m_ObjectHideFlags: 0
@@ -6639,9 +6683,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: SceneChange
+      - m_Target: {fileID: 101574781}
+        m_TargetAssemblyTypeName: Hint_button, Assembly-CSharp
+        m_MethodName: Click_Pathbutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9449,35 +9493,40 @@ MonoBehaviour:
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "\uC5EC\uAE30\uAC00 \uBC14\uB85C ecc\uC57C!"
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
+    isNPC: 0
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "ecc\uB294 \uAD00\uAD11\uAC1D\uB3C4 \uB9CE\uC774 \uCC3E\uB294 \uC774\uD654\uC758
       \uB79C\uB4DC\uB9C8\uD06C\uB77C\uACE0 \uD560 \uC218 \uC788\uC9C0!"
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
+    isNPC: 0
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "\uC815\uBB38\uC5D0\uC11C \uAC00\uC7A5 \uBA3C\uC800 \uBCF4\uC774\uB294
       \uD070 \uAC74\uBB3C\uB85C \uC9C1\uC9C4\uB9CC \uD558\uBA74 \uC27D\uAC8C \uB3C4\uCC29\uD560
       \uC218 \uC788\uC5B4."
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
+    isNPC: 0
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "ecc\uC5D0\uB294 \uC2A4\uD0C0\uBC85\uC2A4, \uD3B8\uC758\uC810, \uAE30\uB150\uD488\uC0F5
       \uADF8\uB9AC\uACE0 \uC789\uC5EC\uACC4\uB2E8 \uB4F1"
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
+    isNPC: 0
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "\uC2DC\uAC04\uC744 \uBCF4\uB0BC \uC218 \uC788\uB294 \uC5EC\uB7EC
       \uACF5\uAC04\uB4E4\uC774 \uC788\uC5B4!!"
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
+    isNPC: 0
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "\uC774 \uC911 \uD55C \uACF5\uAC04\uC5D0 \uC2A4\uD0EC\uD504\uB97C
       \uCC0D\uC744 \uC218 \uC788\uB3C4\uB85D \uC900\uBE44\uD574\uB480\uC5B4."
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
+    isNPC: 0
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
     sentences: "\uB098\uB294 \uB530\uB77C\uAC00\uC9C0 \uC54A\uC744\uD14C\uB2C8 \uD78C\uD2B8\uB97C
       \uBCF4\uACE0 \uC798 \uCC3E\uC544\uC11C \uC2A4\uD0EC\uD504\uB97C \uCC0D\uC5B4\uC640!"
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
-  dialogueBox: {fileID: 578516355}
-  image: {fileID: 53648527}
-  nameText: {fileID: 1571605871}
-  dialogueText: {fileID: 239478748}
+    isNPC: 0
+  npcDialogue: {fileID: 0}
+  userDialogue: {fileID: 0}
   mapButton: {fileID: 1745123958}
   diaglogueKey: ecc
   isDialogue: 0
@@ -18266,9 +18315,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ECCScene, Assembly-CSharp
-        m_MethodName: SceneChange_AR
+      - m_Target: {fileID: 101574781}
+        m_TargetAssemblyTypeName: Hint_button, Assembly-CSharp
+        m_MethodName: Click_Hintbutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23488,3 +23537,4 @@ SceneRoots:
   - {fileID: 258408575}
   - {fileID: 658155331}
   - {fileID: 2001515846}
+  - {fileID: 101574782}
