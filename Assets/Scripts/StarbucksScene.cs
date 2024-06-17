@@ -53,7 +53,6 @@ public class StarbucksScene : MonoBehaviour
     {
         if (ChatManager.manager.starbucks2)
         {
-            mapModal.SetActive(false);
             hintModal.SetActive(true);
         }
         else if (InsideSceneManager.manager.CheckIsNavigationEnd() && stampAnimator.GetBool("isEnd"))

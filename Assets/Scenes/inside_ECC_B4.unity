@@ -7666,6 +7666,7 @@ MonoBehaviour:
   npcDialogue: {fileID: 337326584}
   userDialogue: {fileID: 946480179}
   mapButton: {fileID: 588018976}
+  mapModal: {fileID: 1916816334}
   isDialogue: 0
 --- !u!1 &337791036
 GameObject:
@@ -17698,7 +17699,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: inside_ECC
+          m_StringArgument: inside_ECC_B4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &720298238
@@ -42920,6 +42921,7 @@ MonoBehaviour:
   npcDialogue: {fileID: 1724835636}
   userDialogue: {fileID: 946480179}
   mapButton: {fileID: 588018976}
+  mapModal: {fileID: 1916816334}
   isDialogue: 0
 --- !u!1 &1729271193
 GameObject:

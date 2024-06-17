@@ -20,6 +20,7 @@ public class ChatSystem : MonoBehaviour
     [SerializeField] private GameObject npcDialogue;
     [SerializeField] private GameObject userDialogue;
     [SerializeField] private Button mapButton;
+    [SerializeField] private GameObject mapModal;
 
     public bool isDialogue = true;
     private int cnt = 0;
@@ -52,6 +53,7 @@ public class ChatSystem : MonoBehaviour
             OnOff(false);
             SetChatManager();
             mapButton.gameObject.SetActive(true);
+            mapModal.SetActive(false);
             return;
         }
 

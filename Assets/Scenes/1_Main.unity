@@ -1081,6 +1081,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: 0
   ecc: 0
+  starbucks1: 0
+  starbucks2: 0
+  library: 0
+  gong: 0
 --- !u!4 &290574340
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,7 +2030,7 @@ MonoBehaviour:
   npcDialogue: {fileID: 902973810}
   userDialogue: {fileID: 1262218971}
   mapButton: {fileID: 1555077470}
-  diaglogueKey: main
+  mapModal: {fileID: 1756534280}
   isDialogue: 0
 --- !u!114 &679405081
 MonoBehaviour:
@@ -4977,6 +4981,9 @@ MonoBehaviour:
   starbucks: 0
   ecc_stairs: 0
   gong_b2: 0
+  starbucks_reached: 0
+  ecc_stairs_reached: 0
+  gong_b2_reached: 0
   ECC_STARBUCKS: inside_ECC_B4
   ECC_STAIRS: inside_ECC
   GONG_3F: inside_GONG_ASAN3

@@ -1001,6 +1001,7 @@ MonoBehaviour:
   npcDialogue: {fileID: 209511711}
   userDialogue: {fileID: 1511798041}
   mapButton: {fileID: 1371130614}
+  mapModal: {fileID: 1623685247}
   isDialogue: 0
 --- !u!1 &69336784
 GameObject:
