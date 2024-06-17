@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PathFinder : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
+        if(InsideSceneManager.manager.CheckIsNavigationEnd())
+        {
+            this.transform.position = new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z);
+            return;
+        }
+
         agent = this.GetComponent<NavMeshAgent>();
 
         lr = this.GetComponent<LineRenderer>();
@@ -44,18 +51,18 @@ public class PathFinder : MonoBehaviour
     IEnumerator makePathCoroutine()
     {
         agent.SetDestination(target.transform.position);
-         lr.SetPosition(0, this.transform.position);
+        lr.SetPosition(0, this.transform.position);
 
-          while (Vector3.Distance(this.transform.position, target.transform.position) > 0.1f)
-          {
-              lr.SetPosition(0, this.transform.position);
+        while (Vector3.Distance(this.transform.position, target.transform.position) > 0.1f)
+        {
+            lr.SetPosition(0, this.transform.position);
 
-              drawPath();
+            drawPath();
 
-              yield return null;
-          }
+            yield return null;
+        }
 
-          lr.enabled = false;
+        lr.enabled = false;
       }
     }
 

@@ -15,18 +15,24 @@ EditorBuildSettings:
     path: Assets/Scenes/ECC.unity
     guid: 950657e7e63f3104b929d07ef8da656c
   - enabled: 1
-    path: Assets/Scenes/AR_Hint_ECC2.unity
-    guid: 7b1a5066df37fd6478ec669f925e374a
-  - enabled: 1
-    path: Assets/Scenes/AR_ECC2.unity
-    guid: 4cce9ad03fe9ff64889f358ff8d69002
-  - enabled: 1
     path: Assets/Scenes/AR_Hint_ECC1.unity
     guid: 022a9e17080c89248bf132fdb1a63ff6
+  - enabled: 1
+    path: Assets/Scenes/inside_ECC_B4.unity
+    guid: 5f648372bb08e47bc914d69a38014f06
+  - enabled: 1
+    path: Assets/Scenes/AR_ECC1.unity
+    guid: ce31d2932cf376246a3c9132b801782a
+  - enabled: 1
+    path: Assets/Scenes/AR_Hint_ECC2.unity
+    guid: 7b1a5066df37fd6478ec669f925e374a
   - enabled: 1
     path: Assets/Scenes/inside_ECC.unity
     guid: 68ae4005311102e448aca261020f1e2c
   - enabled: 1
+    path: Assets/Scenes/AR_ECC2.unity
+    guid: 4cce9ad03fe9ff64889f358ff8d69002
+  - enabled: 0
     path: Assets/Scenes/Ending.unity
     guid: 9fe644f9da6b7694a807c5667d7b134d
   m_configObjects: {}

@@ -4465,6 +4465,54 @@ MonoBehaviour:
   locationButton: {fileID: 1039438341}
   mapPanel: {fileID: 1756534280}
   mapAnimator: {fileID: 1555077473}
+--- !u!1 &1801945221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801945223}
+  - component: {fileID: 1801945222}
+  m_Layer: 0
+  m_Name: InsideScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1801945222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801945221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65389dea1bd04b559bf3621ece2f923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starbucks: 0
+  ecc_stairs: 0
+  ECC_STARBUCKS: inside_ECC_B4
+  ECC_STAIRS: inside_ECC
+--- !u!4 &1801945223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801945221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 655.93066, y: -236.79213, z: 421.8236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2106631485
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,3 +4676,4 @@ SceneRoots:
   - {fileID: 1080839990}
   - {fileID: 1114643947}
   - {fileID: 290574340}
+  - {fileID: 1801945223}

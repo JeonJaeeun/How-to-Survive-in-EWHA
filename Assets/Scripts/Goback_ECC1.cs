@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Goback_ECC1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnMouseDown()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (gameObject.name == "backBtn")
+        {
+            SceneManager.LoadScene("inside_ECC_B4");
+        }
     }
 }
