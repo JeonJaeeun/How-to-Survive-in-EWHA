@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class PathFinder : MonoBehaviour
 {
-    public GameObject target; //이동할 목표 지점
+    public GameObject target;
     NavMeshAgent agent;
-    LineRenderer lr; //경로
+    LineRenderer lr;
 
     void Start()
     {
@@ -16,14 +16,14 @@ public class PathFinder : MonoBehaviour
         lr = this.GetComponent<LineRenderer>();
         lr.startWidth = lr.endWidth = 10;
         lr.material.color= Color.red;
-        lr.enabled = false ; //초기 비활성화
+        lr.enabled = false ;
 
         StartCoroutine(StartPathAfterDelay(4.0f));
     }
 
     IEnumerator StartPathAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); // delay 만큼 대기
+        yield return new WaitForSeconds(delay);
         makePath();
     }
     public void makePath()

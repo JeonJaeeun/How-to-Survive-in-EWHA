@@ -10,18 +10,20 @@ public class DoorsScript : MonoBehaviour {
 	void Start () {
         _animator = GetComponent<Animator>();
 	}
-    private void OnTriggerEnter(Collider other)
-    {
-        if ((other.tag == "Player") && (IsOpen == false))
+
+    private void OnCollisionEnter(Collision other) {
+        if ((other.gameObject.CompareTag("Player")) && (IsOpen == false))
         {
+            Debug.Log("Player entered the door trigger");
             _animator.SetBool("open", true);
             IsOpen = true;
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if ((other.tag == "Player") && (IsOpen == true))
+
+    private void OnCollisionExit(Collision other) {
+        if ((other.gameObject.CompareTag("Player")) && (IsOpen == true))
         {
+            Debug.Log("Player exited the door trigger");
             _animator.SetBool("open", false);
             IsOpen = false;
         }
