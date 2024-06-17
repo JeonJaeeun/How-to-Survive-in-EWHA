@@ -20,6 +20,15 @@ public class StarbucksScene : MonoBehaviour
 
     void Start()
     {
+        if(PlayerPrefs.GetInt("Starbucks") == 1)
+        {
+            stamp.color = new Color(255f, 255f, 255f, 1f);
+            stampAnimator.SetBool("isEnd", true);
+        }
+        else
+        {
+            stamp.color = new Color(0f, 0f, 0f, 1f);
+        }
         if (ChatManager.manager.starbucks2)
         {
             mapButton.SetActive(true);
@@ -74,6 +83,7 @@ public class StarbucksScene : MonoBehaviour
     private void ChangeStampColor()
     {
         stamp.color = new Color(255f, 255f, 255f, 1f); // 변경할 색상을 설정합니다.
+        PlayerPrefs.SetInt("Starbucks", 1); // 스탬프 획득 여부를 저장합니다.
 
         // 1초 뒤에 chatModal 활성화
         Invoke(nameof(ShowChat), 1f);
