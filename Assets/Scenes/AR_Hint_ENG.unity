@@ -576,7 +576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 568059315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e153b5d26b97f564a9c667e9c82c326e, type: 3}
+  m_Script: {fileID: 11500000, guid: 638aee05e626eac4487ce2d145309073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &726472767
@@ -814,9 +814,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Goback_Ecc, Assembly-CSharp
-        m_MethodName: SceneChange
+      - m_Target: {fileID: 568059318}
+        m_TargetAssemblyTypeName: Goback, Assembly-CSharp
+        m_MethodName: Back_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

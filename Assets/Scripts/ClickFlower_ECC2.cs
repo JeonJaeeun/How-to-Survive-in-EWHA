@@ -15,6 +15,15 @@ public class ClickFlower_ECC2 : MonoBehaviour
         {
             SceneManager.LoadScene("inside_ECC");
         }
+        else if (SceneManager.GetActiveScene().name == "AR_ENG")
+        {
+            SceneManager.LoadScene("inside_GONG_SIN _B1");
+        }
+
+        else if (SceneManager.GetActiveScene().name == "AR_Library")
+        {
+            SceneManager.LoadScene("inside_Library_1 1");
+        }
     }
 
 }
