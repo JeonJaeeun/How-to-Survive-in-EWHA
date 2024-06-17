@@ -26,7 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/inside_ECC.unity
     guid: 68ae4005311102e448aca261020f1e2c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ending.unity
     guid: 9fe644f9da6b7694a807c5667d7b134d
+  - enabled: 1
+    path: Assets/Scenes/inside_GONG_ASAN3.unity
+    guid: a9cd9efba5c60ba40816a6cc1b8b37b3
+  - enabled: 1
+    path: Assets/Scenes/inside_GONG_ASAN1.unity
+    guid: b628dd4cd97424044ae1150dab504002
   m_configObjects: {}
