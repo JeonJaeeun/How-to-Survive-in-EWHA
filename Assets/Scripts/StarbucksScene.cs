@@ -23,6 +23,7 @@ public class StarbucksScene : MonoBehaviour
         if (ChatManager.manager.starbucks2)
         {
             mapButton.SetActive(true);
+            mapAnimator.SetBool("stop", true);
             mapModal.SetActive(false);
             hintModal.SetActive(true);
         }
