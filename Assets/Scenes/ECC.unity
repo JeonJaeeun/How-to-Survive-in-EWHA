@@ -989,7 +989,7 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
     isNPC: 1
   - name: "\uC774\uD654\uC5EC\uB2C8 (4\uD559\uB144)"
-    sentences: "\uC774 \uC911 \uD55C \uACF5\uAC04\uC5D0 \uC2A4\uD0EC\uD504\uB97C
+    sentences: "\uC774 \uC911 \uB450 \uACF5\uAC04\uC5D0 \uC2A4\uD0EC\uD504\uB97C
       \uCC0D\uC744 \uC218 \uC788\uB3C4\uB85D \uC900\uBE44\uD574\uB480\uC5B4."
     image: {fileID: 21300000, guid: f58e13d4d28f6424b95142f432ff75da, type: 3}
     isNPC: 1
@@ -1001,7 +1001,6 @@ MonoBehaviour:
   npcDialogue: {fileID: 209511711}
   userDialogue: {fileID: 1511798041}
   mapButton: {fileID: 1371130614}
-  diaglogueKey: ecc
   isDialogue: 0
 --- !u!1 &69336784
 GameObject:
@@ -2600,14 +2599,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 123993369}
         m_TargetAssemblyTypeName: ECCScene, Assembly-CSharp
-        m_MethodName: SceneChange_AR
-        m_Mode: 1
+        m_MethodName: SceneChange
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: AR_Hint_ECC1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &220688730
@@ -16777,15 +16776,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 123993369}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: ECCScene, Assembly-CSharp
         m_MethodName: SceneChange
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: inside_ECC_B4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1324327409

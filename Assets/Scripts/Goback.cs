@@ -5,25 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Goback : MonoBehaviour
 {
-    public void Back_button()
+    public void SceneChange(string name)
     {
-        if (SceneManager.GetActiveScene().name == "AR_Hint_ECC1")
-        {
-            SceneManager.LoadScene("ECC");
-        }
-        else if (SceneManager.GetActiveScene().name == "AR_Hint_ECC2")
-        {
-            SceneManager.LoadScene("ECC");
-        }
-        else if (SceneManager.GetActiveScene().name == "AR_Hint_ENG")
-        {
-            SceneManager.LoadScene("GONG");
-        }
-
-        else if (SceneManager.GetActiveScene().name == "AR_Hint_Library")
-        {
-            SceneManager.LoadScene("Library");
-        }
+        SceneManager.LoadScene(name);
     }
 
 }

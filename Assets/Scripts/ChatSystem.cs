@@ -20,12 +20,14 @@ public class ChatSystem : MonoBehaviour
     [SerializeField] private GameObject npcDialogue;
     [SerializeField] private GameObject userDialogue;
     [SerializeField] private Button mapButton;
-    [SerializeField] private string diaglogueKey;
 
-    public bool isDialogue = false;
+    public bool isDialogue = true;
     private int cnt = 0;
     private string MAIN = "1_Main";
     private string ECC = "ECC";
+    private string STARBUCKS = "inside_ECC_B4";
+    private string LIBRARY = "Library";
+    private string GONG = "GONG";
 
     public void ShowDialogue()
     {
@@ -114,6 +116,25 @@ public class ChatSystem : MonoBehaviour
         {
             ChatManager.manager.main = true;
         }
+        else if (SceneManager.GetActiveScene().name == STARBUCKS)
+        {
+            if (InsideSceneManager.manager.CheckIsNavigationEnd())
+            {
+                ChatManager.manager.starbucks2 = true;
+            }
+            else
+            {
+                ChatManager.manager.starbucks1 = true;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == LIBRARY)
+        {
+            ChatManager.manager.library = true;
+        }
+        else if (SceneManager.GetActiveScene().name == GONG)
+        {
+            ChatManager.manager.gong = true;
+        }
     }
 
     private bool CheckIsDialogueEnd()
@@ -125,6 +146,18 @@ public class ChatSystem : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == MAIN)
         {
             return ChatManager.manager.main;
+        }
+        else if (SceneManager.GetActiveScene().name == STARBUCKS)
+        {
+            return ChatManager.manager.starbucks1 && ChatManager.manager.starbucks2;
+        }
+        else if (SceneManager.GetActiveScene().name == LIBRARY)
+        {
+            return ChatManager.manager.library;
+        }
+        else if (SceneManager.GetActiveScene().name == GONG)
+        {
+            return ChatManager.manager.gong;
         }
         return false;
     }
