@@ -933,8 +933,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpaceShipCone, Assembly-CSharp
+      - m_Target: {fileID: 306115776}
+        m_TargetAssemblyTypeName: Pear_SetActive, Assembly-CSharp
         m_MethodName: GameobjectAble
         m_Mode: 1
         m_Arguments:
