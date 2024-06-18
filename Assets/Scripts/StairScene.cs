@@ -64,7 +64,7 @@ public class StairScene : MonoBehaviour
 
     void Update()
     {
-        else if (InsideSceneManager.manager.CheckIsNavigationEnd() && stampAnimator.GetBool("isEnd"))
+        if (InsideSceneManager.manager.CheckIsNavigationEnd() && stampAnimator.GetBool("isEnd"))
         {
             ChangeStampColor();
         }
