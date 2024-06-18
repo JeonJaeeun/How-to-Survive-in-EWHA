@@ -7,6 +7,8 @@ class ChatManager : MonoBehaviour
     public bool ecc = false;
     public bool starbucks1 = false;
     public bool starbucks2 = false;
+    public bool stair1 = false;
+    public bool stair2 = false;
     public bool library = false;
     public bool gong = false;
 

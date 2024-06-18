@@ -9,6 +9,11 @@ public class MainScene : MonoBehaviour
     [SerializeField] private GameObject timetable;
     [SerializeField] private ChatSystem mainChat;
 
+    void Start()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     void Update()
     {
         if (!mainChat.CheckIsNpc())

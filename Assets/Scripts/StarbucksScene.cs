@@ -68,15 +68,15 @@ public class StarbucksScene : MonoBehaviour
         {
             ChangeStampColor();
         }
-        else if (InsideSceneManager.manager.CheckIsNavigationEnd())
-        {
-            firstChat.SetActive(false);
-            hintModal.SetActive(false);
-        }
         else if (!isFirstChatStart && InsideSceneManager.manager.CheckIsReached())
         {
             isFirstChatStart = true;
             firstChat.SetActive(true);
+        }
+        else if (InsideSceneManager.manager.CheckIsNavigationEnd())
+        {
+            firstChat.SetActive(false);
+            hintModal.SetActive(false);
         }
     }
 

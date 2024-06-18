@@ -27,6 +27,7 @@ public class ChatSystem : MonoBehaviour
     private string MAIN = "1_Main";
     private string ECC = "ECC";
     private string STARBUCKS = "inside_ECC_B4";
+    private string STAIR = "inside_ECC";
     private string LIBRARY = "Library";
     private string GONG = "GONG";
 
@@ -129,6 +130,17 @@ public class ChatSystem : MonoBehaviour
                 ChatManager.manager.starbucks1 = true;
             }
         }
+        else if (SceneManager.GetActiveScene().name == STAIR)
+        {
+            if (InsideSceneManager.manager.CheckIsNavigationEnd())
+            {
+                ChatManager.manager.stair2 = true;
+            }
+            else
+            {
+                ChatManager.manager.stair1 = true;
+            }
+        }
         else if (SceneManager.GetActiveScene().name == LIBRARY)
         {
             ChatManager.manager.library = true;
@@ -152,6 +164,10 @@ public class ChatSystem : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == STARBUCKS)
         {
             return ChatManager.manager.starbucks1 && ChatManager.manager.starbucks2;
+        }
+        else if (SceneManager.GetActiveScene().name == STAIR)
+        {
+            return ChatManager.manager.stair1 && ChatManager.manager.stair2;
         }
         else if (SceneManager.GetActiveScene().name == LIBRARY)
         {
