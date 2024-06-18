@@ -20,6 +20,8 @@ public class StairScene : MonoBehaviour
 
     void Start()
     {
+        InsideSceneManager.manager.isClicked = false;
+
         for (int i = 0; i < stamp_prev.Length; i++)
         {
             stamp_prev[i].color = new Color(255f, 255f, 255f, 1f);
@@ -34,6 +36,7 @@ public class StairScene : MonoBehaviour
         {
             stamp.color = new Color(0f, 0f, 0f, 1f);
         }
+        
         if (ChatManager.manager.stair2)
         {
             mapButton.SetActive(true);
@@ -49,12 +52,6 @@ public class StairScene : MonoBehaviour
 
             // TODO : 미션 성공 여부로 true값 바꾸기
             stampAnimator.SetBool("success", true);
-
-            // 실패일 경우
-            if(false) {
-                // 1초 뒤에 chatModal 활성화
-                Invoke(nameof(ShowChat), 1f);
-            }
         }
         else
         {
@@ -67,6 +64,12 @@ public class StairScene : MonoBehaviour
         if (InsideSceneManager.manager.CheckIsNavigationEnd() && stampAnimator.GetBool("isEnd"))
         {
             ChangeStampColor();
+        }
+        else if (InsideSceneManager.manager.isClicked)
+        {
+            InsideSceneManager.manager.isClicked = false;
+            InsideSceneManager.manager.SetIsReached(false);
+            firstChat.SetActive(false);
         }
         else if (!isFirstChatStart && InsideSceneManager.manager.CheckIsReached())
         {
