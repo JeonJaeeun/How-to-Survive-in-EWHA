@@ -6,35 +6,23 @@ using UnityEngine.UI;
 
 public class ECCScene : MonoBehaviour
 {
-  [SerializeField] private Animator mapAnimator;
-  [SerializeField] private GameObject modal;
-  [SerializeField] private ChatSystem chatSystem;
+    [SerializeField] private Animator mapAnimator;
+    [SerializeField] private GameObject modal;
+    [SerializeField] private GameObject mapButton;
+    [SerializeField] private ChatSystem chatSystem;
 
-  void Start()
-  {
-      mapAnimator.SetBool("stop", true);
-  }
-
-  void Update()
-  {
-      if (!chatSystem.isDialogue)
-      {
-          modal.SetActive(true);
-      }
-  }
-
-  public void SceneChange()
-  {
-      SceneManager.LoadScene("inside_ECC_B4");
-  }
-
-    public void SceneChange_AR()
+    void Update()
     {
-        SceneManager.LoadScene("AR_Hint_ECC1");
+        if (!chatSystem.isDialogue)
+        {
+            modal.SetActive(true);
+            mapButton.SetActive(true);
+            mapAnimator.SetBool("stop", true);
+        }
     }
 
-    public void SceneChange_ECC()
+    public void SceneChange(string name)
     {
-        SceneManager.LoadScene("ECC");
+        SceneManager.LoadScene(name);
     }
 }

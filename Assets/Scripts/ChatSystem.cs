@@ -16,16 +16,20 @@ public class Dialogue
 
 public class ChatSystem : MonoBehaviour
 {
-    [SerializeField] private Dialogue[] dialogues;
+    [SerializeField] public Dialogue[] dialogues;
     [SerializeField] private GameObject npcDialogue;
     [SerializeField] private GameObject userDialogue;
     [SerializeField] private Button mapButton;
-    [SerializeField] private string diaglogueKey;
+    [SerializeField] private GameObject mapModal;
 
-    public bool isDialogue = false;
+    public bool isDialogue = true;
     private int cnt = 0;
     private string MAIN = "1_Main";
     private string ECC = "ECC";
+    private string STARBUCKS = "inside_ECC_B4";
+    private string STAIR = "inside_ECC";
+    private string LIBRARY = "Library";
+    private string GONG = "GONG";
 
     public void ShowDialogue()
     {
@@ -50,6 +54,7 @@ public class ChatSystem : MonoBehaviour
             OnOff(false);
             SetChatManager();
             mapButton.gameObject.SetActive(true);
+            mapModal.SetActive(false);
             return;
         }
 
@@ -114,6 +119,36 @@ public class ChatSystem : MonoBehaviour
         {
             ChatManager.manager.main = true;
         }
+        else if (SceneManager.GetActiveScene().name == STARBUCKS)
+        {
+            if (InsideSceneManager.manager.CheckIsNavigationEnd())
+            {
+                ChatManager.manager.starbucks2 = true;
+            }
+            else
+            {
+                ChatManager.manager.starbucks1 = true;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == STAIR)
+        {
+            if (InsideSceneManager.manager.CheckIsNavigationEnd())
+            {
+                ChatManager.manager.stair2 = true;
+            }
+            else
+            {
+                ChatManager.manager.stair1 = true;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == LIBRARY)
+        {
+            ChatManager.manager.library = true;
+        }
+        else if (SceneManager.GetActiveScene().name == GONG)
+        {
+            ChatManager.manager.gong = true;
+        }
     }
 
     private bool CheckIsDialogueEnd()
@@ -125,6 +160,22 @@ public class ChatSystem : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == MAIN)
         {
             return ChatManager.manager.main;
+        }
+        else if (SceneManager.GetActiveScene().name == STARBUCKS)
+        {
+            return ChatManager.manager.starbucks1 && ChatManager.manager.starbucks2;
+        }
+        else if (SceneManager.GetActiveScene().name == STAIR)
+        {
+            return ChatManager.manager.stair1 && ChatManager.manager.stair2;
+        }
+        else if (SceneManager.GetActiveScene().name == LIBRARY)
+        {
+            return ChatManager.manager.library;
+        }
+        else if (SceneManager.GetActiveScene().name == GONG)
+        {
+            return ChatManager.manager.gong;
         }
         return false;
     }
@@ -146,5 +197,14 @@ public class ChatSystem : MonoBehaviour
             return;
         }
         ShowDialogue();
+    }
+
+    public bool CheckIsNpc()
+    {
+        if(cnt < dialogues.Length)
+        {
+            return dialogues[cnt].isNPC;
+        }
+        return true;
     }
 }

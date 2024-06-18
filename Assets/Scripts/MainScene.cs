@@ -6,30 +6,23 @@ using UnityEngine.UI;
 
 public class MainScene : MonoBehaviour
 {
-    [SerializeField] private Button mapButton;
-    [SerializeField] private Button locationButton;
-    [SerializeField] private GameObject mapPanel;
-    [SerializeField] private Animator mapAnimator;
-    private bool isClicked = false;
+    [SerializeField] private GameObject timetable;
+    [SerializeField] private ChatSystem mainChat;
 
-    public void ButtonOnClick()
+    void Start()
     {
-        mapAnimator.SetBool("stop", true);
+        PlayerPrefs.DeleteAll();
+    }
 
-        if (!isClicked)
+    void Update()
+    {
+        if (!mainChat.CheckIsNpc())
         {
-            isClicked = true;
-            mapPanel.SetActive(true);
+            timetable.SetActive(true);
         }
         else
         {
-            isClicked = false;
-            mapPanel.SetActive(false);
+            timetable.SetActive(false);
         }
-    }
-
-    public void LoadEccScene()
-    {
-        SceneManager.LoadScene("ECC");
     }
 }
