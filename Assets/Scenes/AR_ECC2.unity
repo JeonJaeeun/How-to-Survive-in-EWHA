@@ -933,7 +933,7 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 306115776}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpaceShipCone, Assembly-CSharp
         m_MethodName: GameobjectAble
         m_Mode: 1
@@ -1051,10 +1051,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 306115774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28c32d3b0e7beb44b3ed27af5e6e71e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c2316e9c5b5a6847adcd0f20ea7de9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cone: {fileID: 326924405}
+  Pear: {fileID: 326924405}
 --- !u!43 &311175714
 Mesh:
   m_ObjectHideFlags: 0
