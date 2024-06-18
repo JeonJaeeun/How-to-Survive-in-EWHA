@@ -11,7 +11,6 @@ public class StairScene : MonoBehaviour
     [SerializeField] private Animator stampAnimator;
     [SerializeField] private GameObject mapButton;
     [SerializeField] private GameObject mapModal;
-    [SerializeField] private GameObject hintModal;
     [SerializeField] private GameObject firstChat;
     [SerializeField] private GameObject secondChat;
     [SerializeField] private ChatSystem chatSystem;
@@ -25,7 +24,7 @@ public class StairScene : MonoBehaviour
         {
             stamp_prev[i].color = new Color(255f, 255f, 255f, 1f);
         }
-        
+
         if(PlayerPrefs.GetInt("Stair") == 1)
         {
             stamp.color = new Color(255f, 255f, 255f, 1f);
@@ -40,7 +39,6 @@ public class StairScene : MonoBehaviour
             mapButton.SetActive(true);
             mapAnimator.SetBool("stop", true);
             mapModal.SetActive(false);
-            hintModal.SetActive(true);
         }
         else if (InsideSceneManager.manager.CheckIsNavigationEnd())
         {
@@ -66,10 +64,6 @@ public class StairScene : MonoBehaviour
 
     void Update()
     {
-        if (ChatManager.manager.stair2)
-        {
-            hintModal.SetActive(true);
-        }
         else if (InsideSceneManager.manager.CheckIsNavigationEnd() && stampAnimator.GetBool("isEnd"))
         {
             ChangeStampColor();
@@ -82,7 +76,6 @@ public class StairScene : MonoBehaviour
         else if (InsideSceneManager.manager.CheckIsNavigationEnd())
         {
             firstChat.SetActive(false);
-            hintModal.SetActive(false);
         }
     }
 
